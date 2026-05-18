@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.describedAs;
 
 public class UsersApiTest {
 
@@ -18,7 +19,7 @@ public class UsersApiTest {
         Response response = usersService.getUsers();
 
         response.then().assertThat()
-                .statusCode(200);
+                .statusCode(describedAs("Step 1 Failed: GET /users should return status code 200 OK", equalTo(200)));
     }
 
     @Test
@@ -28,7 +29,7 @@ public class UsersApiTest {
         UsersService usersService = new UsersService();
         Response response = usersService.getUsers();
         response.then().assertThat()
-                .header("content-type", equalTo("application/json; charset=utf-8"));
+                .header("content-type", describedAs("Step 2 Failed: Response header content-type should be application/json; charset=utf-8", equalTo("application/json; charset=utf-8")));
     }
 
     @Test
@@ -37,7 +38,7 @@ public class UsersApiTest {
         UsersService usersService = new UsersService();
         Response response = usersService.getUsers();
         response.then().assertThat()
-                .body("", hasSize(10));
+                .body("", describedAs("Step 3 Failed: Response body should contain array of 10 users", hasSize(10)));
     }
 }
 
