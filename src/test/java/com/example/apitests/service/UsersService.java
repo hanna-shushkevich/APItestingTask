@@ -1,6 +1,5 @@
 package com.example.apitests.service;
 
-import com.example.apitests.model.User;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 

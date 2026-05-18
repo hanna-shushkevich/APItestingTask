@@ -1,6 +1,5 @@
 package com.example.apitests;
 
-import com.example.apitests.model.User;
 import com.example.apitests.service.UsersService;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
