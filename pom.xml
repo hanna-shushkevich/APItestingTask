@@ -14,6 +14,7 @@
 		<rest.assured.version>5.5.1</rest.assured.version>
 		<hamcrest.version>3.0</hamcrest.version>
 		<maven.surefire.plugin.version>3.5.2</maven.surefire.plugin.version>
+		<environment>dev</environment>
 	</properties>
 
 	<dependencies>
@@ -55,6 +56,7 @@
 						<junit.jupiter.execution.parallel.enabled>true</junit.jupiter.execution.parallel.enabled>
 						<junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>
 						<junit.jupiter.execution.parallel.mode.classes.default>concurrent</junit.jupiter.execution.parallel.mode.classes.default>
+						<environment>${environment}</environment>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
